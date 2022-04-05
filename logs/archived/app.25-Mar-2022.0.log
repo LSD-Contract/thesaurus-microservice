@@ -1,0 +1,4 @@
+25 Mar 2022 16:18:26.037 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 33600 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+25 Mar 2022 16:18:26.045 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+25 Mar 2022 16:18:26.045 INFO The following profiles are active: dev
+25 Mar 2022 16:18:31.783 INFO Started ThesaurusApplication in 6.095 seconds (JVM running for 7.172)

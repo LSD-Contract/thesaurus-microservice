@@ -1,0 +1,78 @@
+22 Mar 2022 10:10:58.829 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71836 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:10:58.835 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:10:58.835 INFO The following profiles are active: dev
+22 Mar 2022 10:11:06.155 INFO Started ThesaurusApplication in 7.875 seconds (JVM running for 9.546)
+22 Mar 2022 10:23:50.700 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71836 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:23:50.700 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:23:50.700 INFO The following profiles are active: dev
+22 Mar 2022 10:23:52.455 INFO Started ThesaurusApplication in 1.814 seconds (JVM running for 775.846)
+22 Mar 2022 10:25:06.006 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71836 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:25:06.007 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:25:06.007 INFO The following profiles are active: dev
+22 Mar 2022 10:25:08.188 INFO Started ThesaurusApplication in 2.257 seconds (JVM running for 851.578)
+22 Mar 2022 10:25:51.013 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71836 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:25:51.013 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:25:51.014 INFO The following profiles are active: dev
+22 Mar 2022 10:26:02.265 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 74060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:26:02.272 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:26:02.272 INFO The following profiles are active: dev
+22 Mar 2022 10:26:11.341 INFO Started ThesaurusApplication in 9.619 seconds (JVM running for 11.393)
+22 Mar 2022 10:51:29.437 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 74060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:51:29.438 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:51:29.438 INFO The following profiles are active: dev
+22 Mar 2022 10:51:31.196 INFO Started ThesaurusApplication in 1.829 seconds (JVM running for 1531.247)
+22 Mar 2022 10:55:26.800 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 10:55:26.809 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 10:55:26.809 INFO The following profiles are active: dev
+22 Mar 2022 10:55:36.811 INFO Started ThesaurusApplication in 10.779 seconds (JVM running for 13.35)
+22 Mar 2022 10:58:29.708 TRACE No need to create transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findByFullName]: This method is not transactional.
+22 Mar 2022 10:58:29.974 ERROR ERROR: column user0_.id does not exist
+  Position: 8
+22 Mar 2022 11:19:35.517 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 11:19:35.517 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 11:19:35.517 INFO The following profiles are active: dev
+22 Mar 2022 11:19:38.779 INFO Started ThesaurusApplication in 3.371 seconds (JVM running for 1455.319)
+22 Mar 2022 11:20:33.964 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 11:20:33.965 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 11:20:33.965 INFO The following profiles are active: dev
+22 Mar 2022 11:20:36.268 INFO Started ThesaurusApplication in 2.372 seconds (JVM running for 1512.807)
+22 Mar 2022 11:21:07.968 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 11:21:07.968 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 11:21:07.968 INFO The following profiles are active: dev
+22 Mar 2022 11:21:10.393 INFO Started ThesaurusApplication in 2.542 seconds (JVM running for 1546.933)
+22 Mar 2022 12:00:51.629 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:00:51.629 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:00:51.629 INFO The following profiles are active: dev
+22 Mar 2022 12:00:53.944 INFO Started ThesaurusApplication in 2.49 seconds (JVM running for 3930.483)
+22 Mar 2022 12:01:10.976 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:01:10.977 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:01:10.977 INFO The following profiles are active: dev
+22 Mar 2022 12:01:13.355 INFO Started ThesaurusApplication in 2.451 seconds (JVM running for 3949.894)
+22 Mar 2022 12:01:15.106 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:01:15.106 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:01:15.106 INFO The following profiles are active: dev
+22 Mar 2022 12:01:16.670 INFO Started ThesaurusApplication in 1.614 seconds (JVM running for 3953.209)
+22 Mar 2022 12:02:05.631 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:02:05.632 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:02:05.632 INFO The following profiles are active: dev
+22 Mar 2022 12:02:07.211 INFO Started ThesaurusApplication in 1.708 seconds (JVM running for 4003.75)
+22 Mar 2022 12:02:38.586 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:02:38.587 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:02:38.587 INFO The following profiles are active: dev
+22 Mar 2022 12:02:39.901 INFO Started ThesaurusApplication in 1.358 seconds (JVM running for 4036.441)
+22 Mar 2022 12:02:45.606 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:02:45.606 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:02:45.606 INFO The following profiles are active: dev
+22 Mar 2022 12:02:46.994 INFO Started ThesaurusApplication in 1.439 seconds (JVM running for 4043.534)
+22 Mar 2022 12:02:51.676 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:02:51.677 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:02:51.677 INFO The following profiles are active: dev
+22 Mar 2022 12:02:52.912 INFO Started ThesaurusApplication in 1.275 seconds (JVM running for 4049.451)
+22 Mar 2022 12:02:57.077 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:02:57.078 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:02:57.078 INFO The following profiles are active: dev
+22 Mar 2022 12:02:58.609 INFO Started ThesaurusApplication in 1.605 seconds (JVM running for 4055.148)
+22 Mar 2022 12:03:09.517 INFO Starting ThesaurusApplication using Java 17.0.1 on IM-LP-1412 with PID 71060 (D:\NX2.0\lsd\target\classes started by c_jdoddi in D:\NX2.0\lsd)
+22 Mar 2022 12:03:09.517 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+22 Mar 2022 12:03:09.517 INFO The following profiles are active: dev
+22 Mar 2022 12:03:10.894 INFO Started ThesaurusApplication in 1.428 seconds (JVM running for 4067.433)
