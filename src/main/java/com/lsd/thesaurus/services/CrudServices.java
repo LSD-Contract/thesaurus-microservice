@@ -35,6 +35,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.lsd.thesaurus.model.BaseModel;
 import com.lsd.thesaurus.model.EntityInfo;
 import com.lsd.thesaurus.repository.CategoryRepository;
+import com.lsd.thesaurus.repository.ClassificationRepository;
 import com.lsd.thesaurus.repository.CatalogueRepository;
 import com.lsd.thesaurus.repository.DocumentTypeRepository;
 import com.lsd.thesaurus.repository.EntityInfoRepository;
@@ -58,6 +59,7 @@ public class CrudServices {
 	@Autowired private CategoryRepository categoryRepository;
 	@Autowired private DocumentTypeRepository documentTypeRepository;
 	@Autowired private CatalogueRepository catalogueRepository;
+	@Autowired private ClassificationRepository classificationRepository;
 	
 	Map<String, EntityInfo> entityInfoHasMap = new HashMap<String, EntityInfo>();
 	Map<String, JpaRepository<?, Integer>> repositoryMap = new HashMap<String, JpaRepository<?, Integer>>();
@@ -72,6 +74,7 @@ public class CrudServices {
 		repositoryMap.put("Catalogue",catalogueRepository);
 		repositoryMap.put("DocumentType",documentTypeRepository);
 		repositoryMap.put("Category",categoryRepository);
+		repositoryMap.put("Classification",classificationRepository);
 	}
 
 	/**
