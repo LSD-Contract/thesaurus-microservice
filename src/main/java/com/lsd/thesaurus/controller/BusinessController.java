@@ -3,13 +3,14 @@ package com.lsd.thesaurus.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -35,32 +36,43 @@ public class BusinessController {
 		return businessService.echo(servletRequest, message);
 	}
     
-    @PostMapping("business/addCatalogueDocument")
+    @PostMapping(value = "business/addCatalogueDocument", produces = { "application/json" })
     public ResponseBean addCatalogueDocument(HttpServletRequest servletRequest,
-    		@RequestParam ("catalogueId") int catalogueId,
-    		@RequestBody MultipartFile file) {
+    		@RequestParam (value = "catalogueId", required = true) int catalogueId,
+    		@RequestBody MultipartFile file
+    		) {
 
-		logger.debug(1, this.getClass(), "echo# message:" + catalogueId);
-
+		//logger.debug(1, this.getClass(), "echo# catalogueId:" + catalogueId);
+		//int catalogueId = 1;
+		//MultipartFile file=null;
     	return businessService.addCatalogueDocument(servletRequest, catalogueId, file);
     }
     
-    @PostMapping("/uploadFile")
-    public void uploadFile(@RequestPart("file") MultipartFile file) {
-        /*
-    	String fileName = fileStorageService.storeFile(file);
+    /*
+	@GetMapping(value = "business/downloadDocument", produces = { "application/jpg" })
+	public ResponseEntity<Resource> downloadDocument(HttpServletRequest servletRequest,
+			@RequestParam (value = "fileName",required = true) String fileName) throws Exception {
+		setThreadLocal(servletRequest);
 
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path(fileName)
-                .toUriString();
-
-        return new UploadFileResponse(fileName, fileDownloadUri,
-                file.getContentType(), file.getSize());
-        */
-    	System.out.println(file.getName());
-    }
+		logger.debug(1, this.getClass(), "downloadDocument#");
+		
+		return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION,fileName )
+                .contentType(MediaType.parseMediaType("application/jpg"))
+                .body(this.businessService.downloadDocument( fileName ));
+	}
+	*/
     
+	@GetMapping(value = "business/downloadDocument")
+	public ResponseEntity<InputStreamResource> downloadDocument (HttpServletRequest httpServletRequest,
+			@RequestParam (value = "documentName",required = true) String documentName) {
+
+		logger.debug(1, this.getClass(), "downloadDocument# documentName:"+documentName);
+		
+		return businessService.downloadDocument(httpServletRequest, documentName);
+    }
+	
+	
 	/**
 	 * Created a thread local and sets employee name for use by logger
 	 *

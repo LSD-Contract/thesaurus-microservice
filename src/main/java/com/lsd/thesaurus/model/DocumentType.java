@@ -14,6 +14,13 @@ import com.lsd.thesaurus.utilities.EntityListener;
 @EntityListeners(EntityListener.class)
 public class DocumentType extends BaseModel {
 
+	public static int DOCUMENT_TYPE_IMAGE = 1;
+	public static int DOCUMENT_TYPE_WORD = 2;
+	public static int DOCUMENT_TYPE_PDF = 3;
+	public static int DOCUMENT_TYPE_VIDEO = 4;
+	public static int DOCUMENT_TYPE_AUDIO = 5;
+	public static int DOCUMENT_TYPE_TEXT = 6;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

@@ -1,17 +1,14 @@
 package com.lsd.thesaurus.model;
 
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.lsd.thesaurus.utilities.EntityListener;
-
 @Entity
 @Table(name = "catalogue")
-@EntityListeners(EntityListener.class)
+//@EntityListeners(EntityListener.class)
 public class Catalogue extends BaseModel {
 
 	@Id
@@ -23,8 +20,9 @@ public class Catalogue extends BaseModel {
 	private String documentName;
 	private String author;
 	private String citation;
-	private int classificationId;
-	private String alternate_category;
+	private Integer classificationId;
+	private String alternateCategory;
+	private String savedfilename;
 	
 	public int getId() {
 		return id;
@@ -68,16 +66,22 @@ public class Catalogue extends BaseModel {
 	public void setCitation(String citation) {
 		this.citation = citation;
 	}
-	public int getClassificationId() {
+	public Integer getClassificationId() {
 		return classificationId;
 	}
-	public void setClassificationId(int classificationId) {
+	public void setClassificationId(Integer classificationId) {
 		this.classificationId = classificationId;
 	}
-	public String getAlternateCategories() {
-		return alternate_category;
+	public String getAlternateCategory() {
+		return alternateCategory;
 	}
-	public void setAlternateCategories(String alternateCategories) {
-		this.alternate_category = alternateCategories;
+	public void setAlternateCategory(String alternateCategory) {
+		this.alternateCategory = alternateCategory;
+	}
+	public String getSavedfilename() {
+		return savedfilename;
+	}
+	public void setSavedfilename(String savedfilename) {
+		this.savedfilename = savedfilename;
 	}
 }

@@ -300,6 +300,18 @@ public class CrudServices {
 		logger.info(1, this.getClass(), "getByFieldOrPaginated entry# entityNmae : "+entityName+", field : "+fieldName+", value To Match : "+valueToMatch);
 		ResponseBean response = new ResponseBean();
 		
+		if (fieldName == null || fieldName.isEmpty()) {
+			response.setStatus(HttpStatus.EXPECTATION_FAILED);
+			response.setMessage("Field name cannot be null");
+			return response;			
+		}
+		
+		if (valueToMatch == null || valueToMatch.isEmpty()) {
+			response.setStatus(HttpStatus.EXPECTATION_FAILED);
+			response.setMessage("valueToMatch cannot be null");
+			return response;			
+		}
+		
 		int entityIndex = this.supportedEntityIndex(entityName);
 		logger.debug(2, this.getClass(), "entityIndex : " + entityIndex + "entityName : " + entityName);
 		
