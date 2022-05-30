@@ -166,6 +166,23 @@ public class CrudServices {
 				baseClassObj.setModifiedOn(LocalDateTime.now());
 			}
 			
+			
+			// Check for existing name
+			Field nameField = entityClass.getDeclaredField("name");
+			nameField.setAccessible(true);
+			String nameValue = (String) nameField.get(obj);
+			List<BaseModel> baseClassObjList = (List<BaseModel>)repository.findAll();
+			
+			for(BaseModel baseModelClassObjItr: baseClassObjList) {
+				// Check for existing name
+				Field nameFieldItr= entityClass.getDeclaredField("name");
+				nameFieldItr.setAccessible(true);
+				String nameValueItr = (String) nameFieldItr.get(baseModelClassObjItr);
+				if(nameValue.equalsIgnoreCase(nameValueItr)) {
+					throw new Exception(entityName + " already exists");
+				}
+			}
+			
 			logger.debug(2, this.getClass(), "Got object");
 
 			if (repository == null) {

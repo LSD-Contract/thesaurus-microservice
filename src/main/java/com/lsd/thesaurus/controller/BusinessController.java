@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.lsd.thesaurus.model.Users;
 import com.lsd.thesaurus.response.ResponseBean;
 import com.lsd.thesaurus.services.BusinessService;
 import com.lsd.thesaurus.utilities.ILogger;
@@ -71,6 +72,27 @@ public class BusinessController {
 		
 		return businessService.downloadDocument(httpServletRequest, documentName);
     }
+	
+	@GetMapping(value = "business/credentials", produces = { "application/json" })
+	public ResponseBean credentials(HttpServletRequest servletRequest, 
+			@RequestParam(value = "username", required = true) String username,
+			@RequestParam(value = "password", required = true) String password) throws Exception {
+		setThreadLocal(servletRequest);
+
+		logger.debug(1, this.getClass(), "credentials# username:" + username);
+
+		return businessService.credentials(servletRequest, username, password);
+	}
+	
+	@PostMapping(value = "business/create/credentials", produces = { "application/json" })
+	public ResponseBean createCredentials(HttpServletRequest servletRequest, 
+			@RequestBody Users user) throws Exception {
+		setThreadLocal(servletRequest);
+
+		logger.debug(1, this.getClass(), "createCredentials# user:" + user);
+
+		return businessService.createCredentials(servletRequest, user);
+	}
 	
 	
 	/**

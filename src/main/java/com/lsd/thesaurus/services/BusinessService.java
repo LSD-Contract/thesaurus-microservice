@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.util.Base64;
 import java.util.Optional;
 
 import javax.annotation.PostConstruct;
@@ -23,7 +25,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.lsd.thesaurus.model.Catalogue;
+import com.lsd.thesaurus.model.Users;
 import com.lsd.thesaurus.repository.CatalogueRepository;
+import com.lsd.thesaurus.repository.UsersRepository;
 import com.lsd.thesaurus.response.ResponseBean;
 import com.lsd.thesaurus.utilities.ILogger;
 
@@ -36,6 +40,7 @@ public class BusinessService {
 	
 	@Autowired private ILogger logger;
 	@Autowired private CatalogueRepository catalogueRepository;
+	@Autowired private UsersRepository usersRepository;
 		
 	@PostConstruct
 	public void postInitialize() {
@@ -155,6 +160,62 @@ public class BusinessService {
 			logger.error(1, getClass(), "Document "+documentName + " not found");
 			return ResponseEntity.notFound().headers(headers).build();
 		}
+	}
+
+	public ResponseBean credentials(HttpServletRequest servletRequest, String username, String password) {
+		
+		logger.debug(1, this.getClass(), "credentials entry# ");
+		ResponseBean responseBean = new ResponseBean();
+		try {
+			responseBean.setStatus(HttpStatus.OK);
+			responseBean.setMessage("Credentials fetched successfully");
+			password = Base64.getEncoder().encodeToString(password.getBytes());
+			Users userData = usersRepository.findByUsernameAndPassword(username, password);
+			if (userData == null || !userData.isPresent()) {
+				responseBean.setStatus(HttpStatus.EXPECTATION_FAILED);
+				responseBean.setMessage("Invalid username or password");
+				return responseBean;
+			}
+			
+			responseBean.setData(userData);
+		} catch (Exception e) {
+			e.printStackTrace();
+			responseBean.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseBean.setMessage("failed to fetch user data");
+			logger.error(1, this.getClass(), "credentials failed with exception:"+e.getMessage());
+		}
+		
+		logger.debug(1, this.getClass(), "credentials exit#");
+		return responseBean;
+	}
+
+	public ResponseBean createCredentials(HttpServletRequest servletRequest, Users user) {
+		logger.debug(1, this.getClass(), "createCredentials entry# ");
+		ResponseBean responseBean = new ResponseBean();
+		try {
+			responseBean.setStatus(HttpStatus.OK);
+			responseBean.setMessage("Credentials created successfully");
+			
+			user.setPassword(Base64.getEncoder().encodeToString(user.getPassword().getBytes()));
+			Users userData = usersRepository.findByUsername(user.getUsername());
+			if (userData != null && userData.isPresent()) {
+				responseBean.setStatus(HttpStatus.EXPECTATION_FAILED);
+				responseBean.setMessage("Username Already Exists");
+				return responseBean;
+			}
+			user.setCreatedOn(LocalDateTime.now());
+			user.setCreatedBy("System");
+			Users createdUser = usersRepository.save(user);
+			responseBean.setData(createdUser);
+		} catch (Exception e) {
+			e.printStackTrace();
+			responseBean.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
+			responseBean.setMessage("failed to create user data");
+			logger.error(1, this.getClass(), "createCredentials failed with exception:"+e.getMessage());
+		}
+		
+		logger.debug(1, this.getClass(), "createCredentials exit#");
+		return responseBean;
 	}
 	
 	/*
