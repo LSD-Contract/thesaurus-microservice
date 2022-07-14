@@ -1,18 +1,30 @@
 package com.lsd.thesaurus.services;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.text.PDFTextStripperByArea;
+import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.hwpf.extractor.WordExtractor;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
@@ -25,6 +37,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.lsd.thesaurus.model.Catalogue;
+import com.lsd.thesaurus.model.DocumentType;
 import com.lsd.thesaurus.model.Users;
 import com.lsd.thesaurus.repository.CatalogueRepository;
 import com.lsd.thesaurus.repository.UsersRepository;
@@ -37,6 +50,10 @@ public class BusinessService {
 	@Autowired
 	@Value("${filesDir}") 
 	public String filesDir;
+	
+	@Autowired
+	@Value("${keyWordsCount}") 
+	public Integer keyWordsCount;
 	
 	@Autowired private ILogger logger;
 	@Autowired private CatalogueRepository catalogueRepository;
@@ -101,6 +118,17 @@ public class BusinessService {
 			catalogue.setSavedfilename(targetFileName + extension);
 			catalogue.setDocumentName(sourceFileName);
 			
+			// Extract key words
+			if (catalogue.getDocumentTypeId() == DocumentType.DOCUMENT_TYPE_WORD) {
+				String keyWords = getkeyWordsFromWordDocument(targetLocation.toString());
+				catalogue.setKeyWords(keyWords);
+			} else if (catalogue.getDocumentTypeId() == DocumentType.DOCUMENT_TYPE_PDF) {
+				String keyWords = getkeyWordsFromPdfDocument(targetLocation.toString());
+				catalogue.setKeyWords(keyWords);
+			} else if (catalogue.getDocumentTypeId() == DocumentType.DOCUMENT_TYPE_TEXT) {
+				String keyWords = getkeyWordsFromTextDocument(targetLocation.toString());
+				catalogue.setKeyWords(keyWords);
+			}
 			Catalogue savedCatalogue = catalogueRepository.save(catalogue);
 			
 			responseBean.setData(savedCatalogue);
@@ -218,6 +246,200 @@ public class BusinessService {
 		return responseBean;
 	}
 	
+	/**
+	 * parse a file based on extension
+	 * @param fileName
+	 * @return
+	 */
+	private String getkeyWordsFromWordDocument(String fileName) {
+		if (fileName.endsWith(".docx")) {
+			return getkeyWordsFromWordDocumentDocx(fileName);
+		} else {
+			return getkeyWordsFromWordDocumentDoc(fileName);
+		}
+	}
+	
+	/**
+	 * This function returns first 20 words from a microsoft word .docx document
+	 * @param fileName
+	 * @return keywords separated by space
+	 */
+	private String getkeyWordsFromWordDocumentDocx(String fileName) {
+
+		XWPFWordExtractor xwpfWordExtractor = null;
+        try {
+        	XWPFDocument doc = new XWPFDocument(Files.newInputStream(Paths.get(fileName)));
+            xwpfWordExtractor = new XWPFWordExtractor(doc);
+            String docText = xwpfWordExtractor.getText();
+
+            // Get the words in the document
+            String[] words = docText.split("\\s+");
+            if (keyWordsCount == null) {
+            	keyWordsCount = 20;
+            }
+            StringBuffer keyWords = new StringBuffer();
+            
+            for (int i=0; i<Math.min(words.length, keyWordsCount); i++) {
+            	keyWords.append(words[i]).append(" ");
+            }
+            
+            return keyWords.toString();
+        } catch (Exception e) {
+        	e.printStackTrace();
+        	return "";
+        } finally {
+        	if (xwpfWordExtractor != null) {
+        		try {
+					xwpfWordExtractor.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        	}
+        }
+	}
+	/**
+	 * This function returns first 20 words from a microsoft word .doc document
+	 * @param fileName
+	 * @return
+	 */
+	private String getkeyWordsFromWordDocumentDoc(String fileName) {
+
+		FileInputStream fis = null;
+        try {
+        	fis = new FileInputStream(fileName);
+        	HWPFDocument document = new HWPFDocument(fis);
+        	WordExtractor extractor = new WordExtractor(document);
+        	String docText = extractor.getText();
+
+            // Get the words in the document
+            String[] words = docText.split("\\s+");
+            if (keyWordsCount == null) {
+            	keyWordsCount = 20;
+            }
+            StringBuffer keyWords = new StringBuffer();
+            
+            for (int i=0; i<Math.min(words.length, keyWordsCount); i++) {
+            	keyWords.append(words[i]).append(" ");
+            }
+            
+            return keyWords.toString();
+        } catch (Exception e) {
+        	e.printStackTrace();
+        	return "";
+        } finally {
+        	if (fis != null) {
+        		try {
+        			fis.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+        	}
+        }
+	}
+	
+	/**
+	 * This function returns first 20 words from a pdf document
+	 * @param fileName
+	 * @return
+	 */
+	private String getkeyWordsFromPdfDocument(String fileName) {
+		
+		PDDocument document = null;
+        try  {
+
+        	document = PDDocument.load(new File(fileName));
+        	
+            document.getClass();
+
+            if (!document.isEncrypted()) {
+			
+                PDFTextStripperByArea stripper = new PDFTextStripperByArea();
+                stripper.setSortByPosition(true);
+
+                PDFTextStripper tStripper = new PDFTextStripper();
+
+                String pdfFileInText = tStripper.getText(document);
+
+				// split by whitespace
+                String words[] = pdfFileInText.split("\\s+");
+             
+                if (keyWordsCount == null) {
+                	keyWordsCount = 20;
+                }
+                StringBuffer keyWords = new StringBuffer();
+                
+                for (int i=0; i<Math.min(words.length, keyWordsCount); i++) {
+                	keyWords.append(words[i]).append(" ");
+                }
+                
+                return keyWords.toString();
+
+            }
+
+        } catch (Exception e) {
+        	e.printStackTrace();
+        } finally {
+        	try {
+				document.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
+        
+        return "";
+	}
+
+	/**
+	 * This function returns first 20 words from a text file
+	 * @param fileName
+	 * @return
+	 */
+	private String getkeyWordsFromTextDocument(String fileName) {
+		
+		BufferedReader buffer = null;
+		try {
+			buffer = new BufferedReader(new FileReader(fileName));
+			
+            if (keyWordsCount == null) {
+            	keyWordsCount = 20;
+            }
+			int wordCount = 0;
+			StringBuffer keyWords = new StringBuffer();
+			String line;
+			while ((line = buffer.readLine()) != null && wordCount<=keyWordsCount) {
+				
+				// Remove all characters other than alphabets, numbers and space
+				line = line.trim();
+				line = line.replaceAll("[^a-zA-Z0-9\\s]", "");
+                String[] words = line.split(" ");
+                for (int i=0; i<Math.min(keyWordsCount-wordCount, words.length); i++) {
+                	keyWords.append(words[i]).append(" ");
+                }
+                
+                wordCount += Math.min(keyWordsCount-wordCount, words.length);
+                
+                if (wordCount >= keyWordsCount) {
+                	break;
+                }
+            }
+			
+			return keyWords.toString();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (buffer != null) {
+				try {
+					buffer.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return "";
+	}
+
 	/*
 	public Resource downloadDocument(String fileName) throws Exception {
 		

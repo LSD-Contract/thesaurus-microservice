@@ -23,6 +23,7 @@ public class Catalogue extends BaseModel {
 	private Integer classificationId;
 	private String alternateCategory;
 	private String savedfilename;
+	private String keyWords;
 	
 	public int getId() {
 		return id;
@@ -83,5 +84,11 @@ public class Catalogue extends BaseModel {
 	}
 	public void setSavedfilename(String savedfilename) {
 		this.savedfilename = savedfilename;
+	}
+	public String getKeyWords() {
+		return keyWords;
+	}
+	public void setKeyWords(String keyWords) {
+		this.keyWords = keyWords;
 	}
 }

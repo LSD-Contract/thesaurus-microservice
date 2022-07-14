@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<start-class>com.lsd.thesaurus.ThesaurusApplication</start-class>
+		<poi.version>4.1.2</poi.version>
 	</properties>
 	
 	<dependencies>
@@ -44,7 +45,13 @@
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>3.0.4</version>
-			</dependency>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.29</version>
+		</dependency>
+		
 		<dependency>
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-commons</artifactId>
@@ -54,6 +61,22 @@
 		    <artifactId>commons-fileupload</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+		<dependency>
+		        <groupId>org.apache.pdfbox</groupId>
+		        <artifactId>pdfbox</artifactId>
+		        <version>2.0.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-scratchpad</artifactId>
+		    <version>3.0.1-FINAL</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

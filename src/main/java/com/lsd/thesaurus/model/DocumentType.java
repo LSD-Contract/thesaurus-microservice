@@ -18,8 +18,11 @@ public class DocumentType extends BaseModel {
 	public static int DOCUMENT_TYPE_WORD = 2;
 	public static int DOCUMENT_TYPE_PDF = 3;
 	public static int DOCUMENT_TYPE_VIDEO = 4;
-	public static int DOCUMENT_TYPE_AUDIO = 5;
-	public static int DOCUMENT_TYPE_TEXT = 6;
+	public static int DOCUMENT_TYPE_URL = 5;
+	public static int DOCUMENT_TYPE_EXCEL = 6;
+	public static int DOCUMENT_TYPE_AUDIO = 7;
+	public static int DOCUMENT_TYPE_TEXT = 8;
+	public static int DOCUMENT_TYPE_PPT = 9;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
