@@ -1,0 +1,124 @@
+04 May 2022 21:54:59.470 INFO Starting ThesaurusApplication using Java 17.0.2 on VD_Lappy with PID 19320 (C:\Users\dvija\OneDrive\Desktop\Lance Davidson\Code\Micorservice\lsd\target\classes started by dvija in C:\Users\dvija\OneDrive\Desktop\Lance Davidson\Code\Micorservice\lsd)
+04 May 2022 21:54:59.472 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+04 May 2022 21:54:59.472 INFO The following profiles are active: dev
+04 May 2022 21:55:02.224 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 21:55:02.343 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 21:55:02.780 INFO Started ThesaurusApplication in 3.562 seconds (JVM running for 4.14)
+04 May 2022 21:58:02.283 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Catalogue
+04 May 2022 21:58:02.284 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Catalogue, field : categoryId, value To Match : 5
+04 May 2022 21:58:02.285 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Catalogue
+04 May 2022 21:58:02.287 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 21:58:02.287 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Catalogue x where categoryId = 5
+04 May 2022 21:58:02.310 ERROR (conn=187) Unknown column 'catalogue0_.alternateCategory' in 'field list'
+04 May 2022 21:58:02.311 DEBUG [com.lsd.thesaurus.services.CrudServices][ getByFieldOrPaginated API failed with error : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+04 May 2022 21:58:36.202 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Catalogue
+04 May 2022 21:58:36.204 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Catalogue, field : categoryId, value To Match : 5
+04 May 2022 21:58:36.204 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Catalogue
+04 May 2022 21:58:36.205 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 21:58:36.205 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Catalogue x where categoryId = 5
+04 May 2022 21:58:36.208 ERROR (conn=187) Unknown column 'catalogue0_.alternateCategory' in 'field list'
+04 May 2022 21:58:36.208 DEBUG [com.lsd.thesaurus.services.CrudServices][ getByFieldOrPaginated API failed with error : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+04 May 2022 21:58:37.371 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Catalogue
+04 May 2022 21:58:37.372 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Catalogue, field : categoryId, value To Match : 5
+04 May 2022 21:58:37.372 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Catalogue
+04 May 2022 21:58:37.373 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 21:58:37.373 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Catalogue x where categoryId = 5
+04 May 2022 21:58:37.375 ERROR (conn=187) Unknown column 'catalogue0_.alternateCategory' in 'field list'
+04 May 2022 21:58:37.376 DEBUG [com.lsd.thesaurus.services.CrudServices][ getByFieldOrPaginated API failed with error : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+04 May 2022 21:59:59.156 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Catalogue
+04 May 2022 21:59:59.157 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Catalogue, field : categoryId, value To Match : 5
+04 May 2022 21:59:59.157 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Catalogue
+04 May 2022 21:59:59.158 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 21:59:59.158 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Catalogue x where categoryId = 5
+04 May 2022 21:59:59.161 ERROR (conn=187) Unknown column 'catalogue0_.savedfilename' in 'field list'
+04 May 2022 21:59:59.162 DEBUG [com.lsd.thesaurus.services.CrudServices][ getByFieldOrPaginated API failed with error : org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+04 May 2022 22:04:12.001 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Catalogue
+04 May 2022 22:04:12.002 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Catalogue, field : categoryId, value To Match : 5
+04 May 2022 22:04:12.002 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Catalogue
+04 May 2022 22:04:12.002 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.002 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Catalogue x where categoryId = 5
+04 May 2022 22:04:12.011 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.035 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : DocumentType
+04 May 2022 22:04:12.035 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : DocumentType, field : id, value To Match : 5
+04 May 2022 22:04:12.035 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.DocumentType
+04 May 2022 22:04:12.035 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.035 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from DocumentType x where id = 5
+04 May 2022 22:04:12.038 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Classification
+04 May 2022 22:04:12.038 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Classification, field : id, value To Match : 2
+04 May 2022 22:04:12.038 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Classification
+04 May 2022 22:04:12.039 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.039 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Classification x where id = 2
+04 May 2022 22:04:12.040 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.041 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Classification
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Classification
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Classification, field : id, value To Match : 1
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Classification, field : id, value To Match : 3
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : DocumentType
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Classification
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Classification
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : DocumentType, field : id, value To Match : 2
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Classification x where id = 3
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.DocumentType
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Classification x where id = 1
+04 May 2022 22:04:12.042 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.043 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from DocumentType x where id = 2
+04 May 2022 22:04:12.049 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.050 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.050 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.050 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.054 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : DocumentType
+04 May 2022 22:04:12.054 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : DocumentType, field : id, value To Match : 2
+04 May 2022 22:04:12.054 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.DocumentType
+04 May 2022 22:04:12.055 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.055 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from DocumentType x where id = 2
+04 May 2022 22:04:12.057 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.057 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Classification
+04 May 2022 22:04:12.058 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : Classification, field : id, value To Match : 1
+04 May 2022 22:04:12.058 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.Classification
+04 May 2022 22:04:12.058 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.058 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from Classification x where id = 1
+04 May 2022 22:04:12.059 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:12.061 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : DocumentType
+04 May 2022 22:04:12.061 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated entry# entityNmae : DocumentType, field : id, value To Match : 2
+04 May 2022 22:04:12.061 INFO com.lsd.thesaurus.services.CrudServices className : com.lsd.thesaurus.model.DocumentType
+04 May 2022 22:04:12.061 INFO com.lsd.thesaurus.services.CrudServices type : int
+04 May 2022 22:04:12.061 INFO com.lsd.thesaurus.services.CrudServices getByField Query : select x from DocumentType x where id = 2
+04 May 2022 22:04:12.063 INFO com.lsd.thesaurus.services.CrudServices getByFieldOrPaginated exit#
+04 May 2022 22:04:15.081 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : DocumentType
+04 May 2022 22:04:15.081 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #entry request, entityName:DocumentType
+04 May 2022 22:04:15.083 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Classification
+04 May 2022 22:04:15.083 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #entry request, entityName:Classification
+04 May 2022 22:04:15.084 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Category
+04 May 2022 22:04:15.084 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #entry request, entityName:Category
+04 May 2022 22:04:15.085 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 22:04:15.085 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 22:04:15.085 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 22:04:15.088 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 22:04:15.089 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #exit request, entityName:Classification
+04 May 2022 22:04:15.089 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 22:04:15.089 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #exit request, entityName:DocumentType
+04 May 2022 22:04:15.130 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 22:04:15.131 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #exit request, entityName:Category
+04 May 2022 23:01:28.490 INFO Starting ThesaurusApplication using Java 17.0.2 on VD_Lappy with PID 32524 (C:\Users\dvija\OneDrive\Desktop\Lance Davidson\Code\Micorservice\lsd\target\classes started by dvija in C:\Users\dvija\OneDrive\Desktop\Lance Davidson\Code\Micorservice\lsd)
+04 May 2022 23:01:28.492 DEBUG Running with Spring Boot v2.6.3, Spring v5.3.15
+04 May 2022 23:01:28.492 INFO The following profiles are active: dev
+04 May 2022 23:01:30.537 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:01:30.631 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:01:30.962 INFO Started ThesaurusApplication in 2.714 seconds (JVM running for 3.212)
+04 May 2022 23:04:39.347 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : DocumentType
+04 May 2022 23:04:39.347 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Classification
+04 May 2022 23:04:39.347 INFO com.lsd.thesaurus.controller.CrudController getAllEntities #entry entityName : Category
+04 May 2022 23:04:39.348 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #entry request, entityName:DocumentType
+04 May 2022 23:04:39.348 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #entry request, entityName:Classification
+04 May 2022 23:04:39.348 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #entry request, entityName:Category
+04 May 2022 23:04:39.349 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:04:39.349 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:04:39.349 TRACE Getting transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:04:39.352 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:04:39.352 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:04:39.353 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #exit request, entityName:Classification
+04 May 2022 23:04:39.353 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #exit request, entityName:DocumentType
+04 May 2022 23:04:39.390 TRACE Completing transaction for [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]
+04 May 2022 23:04:39.391 DEBUG [com.lsd.thesaurus.services.CrudServices][ getAllEntities #exit request, entityName:Category
