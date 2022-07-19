@@ -8,8 +8,8 @@
 		<version>2.6.3</version>
     	</parent>
 	
-	<groupId>lsd</groupId>
-	<artifactId>lsd</artifactId>
+	<groupId>lsd-T</groupId>
+	<artifactId>lsd-T</artifactId>
 	<version>1.0.0</version>
 	<name>lsd</name>
 	<description>thesaurus for LSD</description>
